@@ -1,14 +1,21 @@
-# Welcome to your CDK TypeScript project!
+# Usage
 
-This is a blank project for TypeScript development with CDK.
+After adding your domain name on [iCloud settings](https://www.icloud.com/settings/) you will be given a bunch of DNS records.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+Export the environment variables: 
+```
+export TXT_RECORD=apple-domain=<Some alphanumeric string>
+export DOMAIN_NAME=example.com
+```
 
-## Useful commands
+If your account does not already CDK bootstrapped for the AWS region, you'll need to do this before deploying:
+```
+npx cdk boostrap
+```
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+Finally, assuming you already have your domain Route53 and AWS credentials configured, Deploy the stack:
+```
+npx cdk deploy
+```
+
+Once DNS is propogated to iCloud servers, you should be able to confirm that your domain is configured and you're ready to go 🚀
