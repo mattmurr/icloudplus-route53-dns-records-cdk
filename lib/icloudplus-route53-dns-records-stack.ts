@@ -1,13 +1,13 @@
 import * as cdk from '@aws-cdk/core';
 import * as route53 from '@aws-cdk/aws-route53';
   
-export interface IcloudRoute53RecordsProps extends cdk.StackProps {
+export interface IcloudplusRoute53DnsRecordsProps extends cdk.StackProps {
   domainName: string;
   txtRecord: string;
 }
 
-export class IcloudRoute53RecordsStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props: IcloudRoute53RecordsProps) {
+export class IcloudplusRoute53DnsRecordsStack extends cdk.Stack {
+  constructor(scope: cdk.Construct, id: string, props: IcloudplusRoute53DnsRecordsProps) {
     super(scope, id, props);
 
     const zone = route53.HostedZone.fromLookup(this, "Zone", { domainName: props.domainName });

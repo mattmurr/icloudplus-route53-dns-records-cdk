@@ -1,8 +1,8 @@
 {
-  "name": "icloud-route53-records",
+  "name": "icloudplus-route53-dns-records",
   "version": "0.1.0",
   "bin": {
-    "icloud-route53-records": "bin/icloud-route53-records.js"
+    "icloudplus-route53-dns-records": "bin/icloudplus-route53-dns-records.js"
   },
   "scripts": {
     "build": "tsc",
